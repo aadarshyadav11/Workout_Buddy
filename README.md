@@ -1,3 +1,4 @@
+## Project Title - Workout Buddy
 - M: MongoDB   (Database)
 - E: Express.js  (Backend)
 - R: React.js   (Frontend)
