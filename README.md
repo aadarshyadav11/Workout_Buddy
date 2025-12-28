@@ -1,7 +1,7 @@
-M: MongoDB   (Database)
-E: Express.js  (Backend)
-R: React.js   (Frontend)
-N: Node.js  (Backend)
+- M: MongoDB   (Database)
+- E: Express.js  (Backend)
+- R: React.js   (Frontend)
+- N: Node.js  (Backend)
 
 ## Frontend (Browser / Client side)       Backend (Server)                 Database
            React App                      Node.js + Express.js             MongoDB
