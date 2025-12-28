@@ -18,7 +18,7 @@ const Home = () => {
     // fetching data from database
     useEffect(() => {
         //method 1
-        // fetch("http://localhost:4000/api/workouts")
+        // fetch(`${import.meta.env.VITE_API_URL}/api/workouts`)
         //     .then((res) => res.json())
         //     .then((data) => {
         //         setWorkouts(Array.isArray(data) ? data : []);
