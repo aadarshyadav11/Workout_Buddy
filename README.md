@@ -22,11 +22,11 @@
 - nodemon server.js
 
 ## API Endpoints
-GET    -  /api/workouts      --> get all the workout docs
-POST   -  /api/workouts      --> create / register a new workout docs
-GET    -  /api/workouts/:id  --> get a single workout docs
-DELETE -  /api/workouts/:id  --> delete a single workout docs
-PATCH  -  /api/workouts/:id  --> update a single workout
+- GET    -  /api/workouts      --> get all the workout docs
+- POST   -  /api/workouts      --> create / register a new workout docs
+- GET    -  /api/workouts/:id  --> get a single workout docs
+- DELETE -  /api/workouts/:id  --> delete a single workout docs
+- PATCH  -  /api/workouts/:id  --> update a single workout
 
 ## Frontend
 - Syntax :  npx create-react-app folder_name     (older version react setup)
