@@ -38,3 +38,10 @@
 
 - npm install   (to install dependencies)
 - npm install react-router-dom   (to install router dependencies)
+
+
+## To get amazing fonts icons
+- Material symbol icons      --> search in google 
+
+## to make Dates more impressive 
+-- npm install date-fns    (npm module to make dates more attractive and readable) 
