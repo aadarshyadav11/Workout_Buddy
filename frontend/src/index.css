@@ -142,7 +142,7 @@ header a{
   cursor: pointer;
   background-color: #f1f1f1;
   padding: 8px;
-  border-radius: 50%;
+  border-radius: 10%;
   color: #333;
 }
 
@@ -178,4 +178,8 @@ div.error{
   color: var(--error);
   border-radius: 4px;
   margin: 20px 0px;
+}
+
+input.error{
+  border: 1px solid var(--error);
 }
