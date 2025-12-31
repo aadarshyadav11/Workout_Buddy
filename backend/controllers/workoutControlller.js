@@ -52,6 +52,7 @@ exports.getWorkoutByID = async (req,res) => {
 exports.createNewWorkout = async(req,res) => {
     const {title, reps, load} = req.body;
 
+
     if(!title || !reps || !load){
         return res.status(400).json({
             message : "Please provide all the required details"
@@ -67,9 +68,7 @@ exports.createNewWorkout = async(req,res) => {
         res.status(201).json(workout)
     }
     catch(error){
-        return res.status(500).json({
-            message : error.message
-        });
+        return res.status(500).json({message : error.message});
     }   
 }
 
@@ -88,11 +87,7 @@ exports.deleteWorkoutById = async(req,res) => {
             message : "Workout not found"
         })
     }
-    res.status(200).json({
-        success : true,
-        message : "workout deleted successfully",
-        workout : workout
-    })
+    res.status(200).json(workout)
 } 
 
 // update workout by its ID
