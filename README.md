@@ -44,4 +44,13 @@
 - Material symbol icons      --> search in google 
 
 ## to make Dates more impressive 
--- npm install date-fns    (npm module to make dates more attractive and readable) 
+- npm install date-fns    (npm module to make dates more attractive and readable) 
+
+## email and password validator
+- npm install validator / npm i validator
+
+## for hashing and protecting password
+- npm install bcrypt
+
+## for securing authorazation and generating token
+- npm i jsonwebtoken
