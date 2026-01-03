@@ -1,22 +1,33 @@
 import React, { useContext } from 'react'
 import { WorkoutsContext } from '../context/WorkoutsContext'
 
+
 // importing date-fns module
 import {formatDistanceToNow} from 'date-fns'
+import { AuthContext } from '../context/AuthContext'
 
 const Workoutdetails = ({workout}) => {
 
   const {dispatch} = useContext(WorkoutsContext);
+  const {user} = useContext(AuthContext)
 
   const handleClick = async () => {
+
+      if(!user){
+        return
+      }
+      
       const res = await fetch(`${import.meta.env.VITE_API_URL}/api/workouts/${workout._id}`, {
-        method: 'DELETE'
+        method: 'DELETE',
+        headers: {
+          'Authorization' : `Bearer ${user.token}` 
+        }
       })
 
       const json = await res.json();
 
       if(res.ok){
-         dispatch({type : 'DELETE_WORKOUT', payload: json})
+        dispatch({type : 'DELETE_WORKOUT', payload: json})
       }
   }
 

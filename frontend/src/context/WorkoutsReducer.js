@@ -15,4 +15,4 @@ export const WorkoutsReducer = (state, action) => {
         default:
             return state;       
     }
-}
+} 

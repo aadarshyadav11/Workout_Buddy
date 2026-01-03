@@ -1,13 +1,44 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { Link } from 'react-router-dom'
+import { useLogout } from './useLogout'  
+import { AuthContext } from '../context/AuthContext'
+                                                                                                                                                         
+
 
 const Navbar = () => {
+
+  const {logout} = useLogout();
+  const {user} = useContext(AuthContext)                                                                                             
+
+
+  const handleClick = () => {
+    logout()
+  }
+
   return (
     <header>
         <div className="container">
             <Link to="/" >
-                <h1>Workout Buddy</h1>
+                <h1>Workout Buddy</h1>                                        
             </Link>
+            <nav>
+              {
+                user && (
+                   <div>
+                      <span>{user.email}</span>
+                      <button onClick={handleClick}>Log out</button>
+                  </div>
+                )
+              }
+              {
+                !user && (
+                  <div>
+                      <Link to="/signup">SignUp</Link>
+                      <Link to="/login">Login</Link>
+                  </div>
+                )
+              }
+            </nav>
         </div>
     </header>
   )

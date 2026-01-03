@@ -6,6 +6,8 @@ import React, { useEffect, useContext } from 'react'
 import Workoutdetails from '../components/Workoutdetails'
 import WorkoutForm from '../components/WorkoutForm';
 import { WorkoutsContext } from '../context/WorkoutsContext';
+import { AuthContext } from '../context/AuthContext';
+
 
 
 const Home = () => {
@@ -14,6 +16,7 @@ const Home = () => {
     // const [workouts, setWorkouts] = useState([]);
 
     const { workouts, dispatch} = useContext(WorkoutsContext)
+    const {user} = useContext(AuthContext)
 
     // fetching data from database
     useEffect(() => {
@@ -30,7 +33,11 @@ const Home = () => {
 
         // method 2
         const fetchWorkouts = async () => {
-            const res = await fetch(`${import.meta.env.VITE_API_URL}/api/workouts`)
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/api/workouts`, {
+                headers: {
+                    'Authorization' : `Bearer ${user.token}`
+                }
+            })
             const json = await res.json()
 
                 if(res.ok){
@@ -40,8 +47,12 @@ const Home = () => {
                     dispatch({type: "SET_WORKOUTS", payload: json})
                 } 
         }
-        fetchWorkouts()
-        }, [dispatch])
+
+        if(user){
+            fetchWorkouts()
+        }
+       
+        }, [dispatch, user])
 
 
   return (
